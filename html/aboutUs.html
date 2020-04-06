@@ -4,25 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About us</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header class="header">
-        <img src="" alt="Logo">
-        <nav>
-            <a href="../index.html">Home</a>
-            <div class="multiLinks">
-                <a href="list.html">List</a>
-                <div class="category">
-                    <a href="">Vijesti</a>
-                    <a href="">Svijet</a>
-                    <a href="">Sport</a>
-                    <a href="">Lifestyle</a>
+        <img src="../images/news.gif" alt="Logo">
+        <img id="daily" src="../images/news2.gif" alt="dailygif">
+        <div class="navbar" id="navbar">
+            <a href="#home" class="tab">Home</a>
+            <a href="#politics" class="tab">Politics</a>
+            <a href="#society" class="tab">Society</a>
+            <a href="#economy" class="tab">Economy</a>
+            <div class="dropdown tab">
+                <button class="dropbtn">Sport &nbsp;&nbsp<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#">Football</a>
+                    <a href="#">Basketball</a>
+                    <a href="#">Tennis</a>
+                    <a href="#">Other</a>
                 </div>
             </div>
-            <a href="customPage.html">Custom Page</a>
-            <a href="aboutUs.html">About us</a>
-        </nav>
+            <a href="#health" class="tab">Health</a>
+            <a href="#lifestyle" class="tab">Lifestyle</a>
+            <a href="#horoscope" class="tab">Horoscope</a> 
+        </div>
     </header>
 
     <div class="main">

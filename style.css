@@ -1,0 +1,203 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+.header{
+    margin-bottom: 50px;
+}
+
+#daily{
+    width: 350px;
+    float: right;
+    height: 180px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+  display: flex;
+}
+
+.navbar a, .navbar button{
+  flex:1;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.sticky {
+position: fixed;
+top: 0;
+width: 100%;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+/* Content */
+.slider{
+    position: relative;
+    width: 80%;
+    display: flex;
+    padding-bottom: 50px;
+    margin-left: 3%;
+}
+.slider > button{
+    height: 20px;
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+}
+.rightBtn{
+    right: -1%;
+}
+.leftBtn{
+    left: -1%;
+}
+.slider > .content{
+    position: relative;
+    flex: 1;
+    width: 30%;
+}
+.slider > .content > .backgroundImg{
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: 1px solid black;
+}
+.slider > .content > p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: yellow;
+    width: 70%;
+    z-index: 1;
+}
+.slider > .content > .readMoreBtn{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: yellow;
+    width: 50%;
+    z-index: 1;
+}
+
+.line{
+    position: relative;
+}
+.right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 4%;
+    width: 10%;
+}
+.best > .content{
+    position: relative;
+}
+.best > .content > img{
+    width: 100%;
+}
+.best > .content > p{
+    position: absolute;
+    top: 50%;
+    right: -25%;
+    transform: translate(0%, -50%);
+}
+
+.facebook{
+    position: relative;
+    top: 20px;
+}
+.facebook > .content > p{
+    height: 50px;
+    text-align: center;
+}
+
+.topRated{
+    position: relative;
+    margin-left: 3%;
+    width: 80%;
+    margin-bottom: 70px;
+}
+.topRated > .row{
+    display: flex;
+}
+.topRated > .row > .content{
+    position: relative;
+    flex: 1;
+    padding-bottom: 20px;
+}
+.topRated > .row > .content > img{
+    width: 60%;
+}
+.topRated > .row > .content > .text{
+    position: absolute;
+    top: 45%;
+    right: 0;
+    transform: translate(0,-50%);
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+}
+.topRated > .loadMoreBtn{
+    position: absolute;
+    left: 50%;
+}
