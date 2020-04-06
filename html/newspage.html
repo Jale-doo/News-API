@@ -18,6 +18,11 @@
         .navbar {
           overflow: hidden;
           background-color: #333;
+          width: 100%;
+        }
+
+        .tab{
+          width: 10%;
         }
         
         .navbar a {
@@ -82,106 +87,142 @@
         }
         </style>
 </head>
+
 <body>
-    <header class="header">
-        <img src="newsgif.gif" alt="Logo">
-        <img id="daily" src="daily.gif" alt="dailygif">
-        <div class="navbar" id="navbar">
-            <a href="#home">Home</a>
-            <a href="#politics">Politics</a>
-            <a href="#society">Society</a>
-            <a href="#economy">Economy</a>
-            <div class="dropdown">
-            <button class="dropbtn">Sport &nbsp;<i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="#">Football</a>
-                <a href="#">Basketball</a>
-                <a href="#">Tennis</a>
-                <a href="#">Other</a>
-            </div>
-            </div>
-            <a href="#health">Health</a>
-            <a href="#lifestyle">Lifestyle</a>
-            <a href="#horoscope">Horoscope</a> 
-        </div>
-    </header>
+  <header class="header">
+      <img src="news.gif" alt="Logo">
+      <img id="daily" src="news2.gif" alt="dailygif">
+      <div class="navbar" id="navbar">
+          <a href="#home" class="tab">Home</a>
+          <a href="#politics" class="tab">Politics</a>
+          <a href="#society" class="tab">Society</a>
+          <a href="#economy" class="tab">Economy</a>
+          <div class="dropdown tab">
+              <button class="dropbtn">Sport &nbsp;&nbsp<i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                  <a href="#">Football</a>
+                  <a href="#">Basketball</a>
+                  <a href="#">Tennis</a>
+                  <a href="#">Other</a>
+              </div>
+              </div>
+              <a href="#health" class="tab">Health</a>
+              <a href="#lifestyle" class="tab">Lifestyle</a>
+              <a href="#horoscope" class="tab">Horoscope</a> 
+          </div>
+  </header>
+<br><br><br><br>
+  <div class="input">
+      <input type="text" class="inputText">
+      <button class="searchBtn">Search</button>
+  </div>
+  <div class="filter">
+      <input type="radio" name="option" value="name" id="name" checked>
+      <label for="name">Name</label>
+      <input type="radio" name="option" value="mostRead" id="mostRead">
+      <label for="mostRead">Most read</label>
+      <input type="radio" name="option" value="mostComments" id="mostComments">
+      <label for="mostComments">Most comments</label>
+      <div class="category">
+          <input type="checkbox" name="vijesti" id="vijesti">
+          <label for="vijesti">Vijesti</label>
+          <input type="checkbox" name="svijet" id="svijet">
+          <label for="svijet">Svijet</label>
+          <input type="checkbox" name="sport" id="sport">
+          <label for="sport">Sport</label>
+          <input type="checkbox" name="lifestyle" id="lifestyle">
+          <label for="lifestyle">Lifestyle</label>
+      </div>
+  </div>
 
-    <div class="content">
-        <h3>Sticky Navigation Example</h3>
-        <p>The navbar will stick to the top when you reach its scroll position.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <div class="main">
+      <div class="row">
+          <div class="content">
+              <div class="imgContainer">
+                  <img src="" alt="news">
+              </div>
+              <div class="info">
+                  <p>info1</p>
+                  <p>info2</p>
+                  <p>info3</p>
+                  <p>info4</p>
+              </div>
+          </div>
+
+          <div class="content">
+              <div class="imgContainer">
+                  <img src="" alt="news">
+              </div>
+              <div class="info">
+                  <p>info1</p>
+                  <p>info2</p>
+                  <p>info3</p>
+                  <p>info4</p>
+              </div>
+          </div>
       </div>
 
-      <div class="content">
-        <h3>Sticky Navigation Example</h3>
-        <p>The navbar will stick to the top when you reach its scroll position.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-      </div>
+      <div class="row">
+          <div class="content">
+              <div class="imgContainer">
+                  <img src="" alt="news">
+              </div>
+              <div class="info">
+                  <p>info1</p>
+                  <p>info2</p>
+                  <p>info3</p>
+                  <p>info4</p>
+              </div>
+          </div>
 
-      <div class="content">
-        <h3>Sticky Navigation Example</h3>
-        <p>The navbar will stick to the top when you reach its scroll position.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+          <div class="content">
+              <div class="imgContainer">
+                  <img src="" alt="news">
+              </div>
+              <div class="info">
+                  <p>info1</p>
+                  <p>info2</p>
+                  <p>info3</p>
+                  <p>info4</p>
+              </div>
+          </div>
       </div>
+  </div>
+  <nav class="navigate">
+      <a href="">Prev</a>
+      <a href="">1</a>
+      <a href="">2</a>
+      <a href="">3</a>
+      <p>...</p>
+      <a href="">Next</a>
+  </nav>
 
-      <div class="content">
-        <h3>Sticky Navigation Example</h3>
-        <p>The navbar will stick to the top when you reach its scroll position.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-      </div>
+  <footer class="footer">
+      <nav>
+          <a href="index.html" target="_blank">Home</a>
+          <a href="./html/list.html" target="_blank">List</a>
+          <a href="./html/customPage.html" target="_blank">Custom Page</a>
+          <a href="./html/aboutUs.html" target="_blank">About us</a>
+      </nav>
+  </footer>
 
-      <div class="content">
-        <h3>Sticky Navigation Example</h3>
-        <p>The navbar will stick to the top when you reach its scroll position.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-      </div>
 
-    <script>
-        window.onscroll = function() {myFunction()};
-        
-        var navbar = document.getElementById("navbar");
-        var sticky = navbar.offsetTop;
-        
-        function myFunction() {
-          if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-          } else {
-            navbar.classList.remove("sticky");
-          }
+
+  <script>
+      window.onscroll = function() {myFunction()};
+      
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+      
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
         }
-        </script>
-
+      }
+  </script>
 
 </body>
 </html>
