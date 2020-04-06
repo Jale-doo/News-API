@@ -8,7 +8,13 @@
         body {
           font-family: Arial, Helvetica, sans-serif;
         }
-        
+
+        #daily{
+            width: 350px;
+            float: right;
+            height: 180px;
+        }
+
         .navbar {
           overflow: hidden;
           background-color: #333;
@@ -79,19 +85,25 @@
 <body>
     <header class="header">
         <img src="newsgif.gif" alt="Logo">
+        <img id="daily" src="daily.gif" alt="dailygif">
         <div class="navbar" id="navbar">
             <a href="#home">Home</a>
-            <a href="#news">News</a>
+            <a href="#politics">Politics</a>
+            <a href="#society">Society</a>
+            <a href="#economy">Economy</a>
             <div class="dropdown">
-            <button class="dropbtn">Dropdown 
-                <i class="fa fa-caret-down"></i>
+            <button class="dropbtn">Sport &nbsp;<i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a href="#">Football</a>
+                <a href="#">Basketball</a>
+                <a href="#">Tennis</a>
+                <a href="#">Other</a>
             </div>
-            </div> 
+            </div>
+            <a href="#health">Health</a>
+            <a href="#lifestyle">Lifestyle</a>
+            <a href="#horoscope">Horoscope</a> 
         </div>
     </header>
 
