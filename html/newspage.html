@@ -9,6 +9,9 @@
           font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
+        .slideshow-container{box-sizing: border-box;
+        }
+
         #hometab{
           background-color: rgb(73, 202, 202);
         }
@@ -106,22 +109,21 @@
         .footer{
           background-color: black;
           width: 100%;
+          position: absolute;
+          bottom: 0;
         }
 
         .footer1{
           display: flex;
-          background-color: black;
           width: 100%;
           padding: 30px;
-          margin-top: 30px;
-          display: flex;
           border-top-style:double;
           border-top-color: rgb(73, 202, 202);
           border-top-width: 3px;
         }
 
         .footer2{
-          background-color: black;
+
           color: white;
           width: 100%;
           padding: 0;
@@ -184,43 +186,70 @@
           to {color: rgb(135, 136, 185);}
 }
 
-        .inputText{
-          border-style:solid;
-          border-color: rgb(3, 10, 29);
-          border-width: 3px;
-          height: 40px;
-          width: 75%;
-          padding-left: 5px;
-        }
-
-        .searchBtn{
-          background-color: rgb(73, 202, 202);
-          color:rgb(11, 11, 22);
-          height:30px;
-          width:30%;
-          margin-left:35%;
-          margin-top: 5px;
-          font-weight: bold;
-          font-size: large;
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-
         .head{
           display: flex;
           position: relative;
         }
 
 
+        .mySlides {display: none;}
+        img {vertical-align: middle;}
+
+        /* Slideshow container */
+        .slideshow-container {
+          max-width: 1000px;
+          position: relative;
+          margin: auto;
+        }
+
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+
+
+        .active {
+          background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+          -webkit-animation-name: fade;
+          -webkit-animation-duration: 1.5s;
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+          .text {font-size: 11px}
+      }
 
 
 
+      .mySlidesContent{
+        display: flex;
+      }
 
-
-
-
-
-
-
+      .mySlidesContent div{
+        flex: 1;
+      }
 
         </style>
 </head>
@@ -263,68 +292,50 @@
         </header>
 
 <!--ovdje ce da ide slider-->
+<div class="slideshow-container">
 
-  <div class="main">
-      <div class="row">
-          <div class="content">
-              <div class="imgContainer">
-                  <img src="" alt="news">
-              </div>
-              <div class="info">
-                  <p>info1</p>
-                  <p>info2</p>
-                  <p>info3</p>
-                  <p>info4</p>
-              </div>
-          </div>
-
-          <div class="content">
-              <div class="imgContainer">
-                  <img src="" alt="news">
-              </div>
-              <div class="info">
-                  <p>info1</p>
-                  <p>info2</p>
-                  <p>info3</p>
-                  <p>info4</p>
-              </div>
-          </div>
-      </div>
-
-      <div class="row">
-          <div class="content">
-              <div class="imgContainer">
-                  <img src="" alt="news">
-              </div>
-              <div class="info">
-                  <p>info1</p>
-                  <p>info2</p>
-                  <p>info3</p>
-                  <p>info4</p>
-              </div>
-          </div>
-
-          <div class="content">
-              <div class="imgContainer">
-                  <img src="" alt="news">
-              </div>
-              <div class="info">
-                  <p>info1</p>
-                  <p>info2</p>
-                  <p>info3</p>
-                  <p>info4</p>
-              </div>
-          </div>
-      </div>
+  <div id="news" class="mySlides fade">
+    <div class = "mySlidesContent">
+    <div class = "news">prva vijest</div>
+    <div class = "news">druga vijest</div>
+    <div class = "news">treca vijest</div>
+    </div>
   </div>
-  <nav class="navigate">
-      <a href="">Prev</a>
-      <a href="">1</a>
-      <a href="">2</a>
-      <a href="">3</a>
-      <p>...</p>
-      <a href="">Next</a>
-  </nav>
+  
+  <div id="news" class="mySlides fade">
+    <div class = "mySlidesContent">
+    <div class = "news">cetvrta vijest</div>
+    <div class = "news">peta vijest</div>
+    <div class = "news">sesta vijest</div>
+    </div>
+  </div>
+  
+  <div id="news" class="mySlides fade">
+    <div class = "mySlidesContent">
+    <div class = "news">sedma vijest</div>
+    <div class = "news">osma vijest</div>
+    <div class = "news">deveta vijest</div>
+    </div>
+  </div>
+
+  <div id="news" class="mySlides fade">
+    <div class = "mySlidesContent">
+    <div class = "news">deseta vijest</div>
+    </div>
+  </div>
+  
+  </div>
+
+
+
+
+
+
+
+
+
+
+
 
   <footer class="footer">
     <div class = "footer1">
@@ -373,6 +384,28 @@
         navbar.classList.remove("sticky");
       }
     }
+
+
+
+
+
+    var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+
+  slides[slideIndex-1].style.display = "block";  
+
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
 </script>
 
 </body>
