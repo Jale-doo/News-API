@@ -108,7 +108,7 @@ body {
 .footer{
   background-color: black;
   width: 100%;
-  position: absolute;
+
   bottom: 0;
   padding: 0;
   margin: 0;
@@ -117,7 +117,8 @@ body {
 .footer1{
   display: flex;
   width: 100%;
-  padding: 30px;
+  padding-top: 30px;
+  padding-left: 15px;
   border-top-style:double;
   border-top-color: rgb(73, 202, 202);
   border-top-width: 3px;
@@ -183,7 +184,7 @@ body {
 
 @keyframes anim {
   from {color: rgb(9, 10, 36);}
-  to {color: rgb(135, 136, 185);}
+  to {color: rgb(60, 61, 119);}
 }
 
 .head{
@@ -217,7 +218,6 @@ width: 100%;
 text-align: center;
 }
 
-
 .active {
 background-color: #717171;
 }
@@ -228,6 +228,13 @@ background-color: #717171;
 -webkit-animation-duration: 1.5s;
 animation-name: fade;
 animation-duration: 1.5s;
+}
+
+.fade2{
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 0.25s;
 }
 
 @-webkit-keyframes fade {
@@ -381,7 +388,7 @@ margin-top: 30px;
 }
 
 .topRated > .row{
-display: flex;
+  display: none;
 }
 
 .topRated > .row > .content{
@@ -405,6 +412,80 @@ text-align: center;
 }
 
 .topRated > .loadMoreBtn{
-position: absolute;
-left: 50%;
+  position: absolute;
+  left: 50%;
+}
+
+
+
+
+/*Fullscreen*/
+.fullscreen {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  top: 0;
+  left:0;
+  width: 93%; /* Full width */
+  height: 90%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  margin-left: 5%;
+  margin-top: 4%;
+}
+
+/* X button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.totop {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+}
+.totop a {
+  display: none;
+}
+
+#loadMore{
+  margin-left: 44%;
+}
+
+.topRated > .row1{
+  display: none;
+}
+
+#loadMore {
+  padding: 10px;
+  text-align: center;
+  background-color: #33739E;
+  color: #fff;
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-color: #fff;
+  box-shadow: 0 1px 1px #ccc;
+  transition: all 600ms ease-in-out;
+  -webkit-transition: all 600ms ease-in-out;
+  -moz-transition: all 600ms ease-in-out;
+  -o-transition: all 600ms ease-in-out;
+}
+#loadMore:hover {
+  background-color: #fff;
+  color: #33739E;
 }
