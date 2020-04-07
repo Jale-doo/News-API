@@ -13,33 +13,20 @@
           background-color: rgb(73, 202, 202);
         }
 
-        #welcome{
-          animation: anim 1s infinite alternate;
-          font-weight:bolder;
-          font-size:x-large;
-          margin-left: 25%;
-          font-family: cursive;
-        }
-
-        @keyframes anim {
-          from {color: rgb(9, 10, 36);}
-          to {color: rgb(135, 136, 185);}
-}
-
-@keyframes anim2 {
-  from {color: rgb(255, 255, 255);}
-  to {color: rgb(9, 10, 36);}
-}
-
-
         .header{
           position: relative;
+        }
+
+        .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
         }
 
         #daily{
             width: 250px;
             float: right;
-            height: 140px;
+            height: 170px;
             position: absolute;
             bottom: 0;
             right: 3%;
@@ -183,11 +170,19 @@
           width: 100%;
         }
 
-        .inputinside{
-          margin-top: 0;
+        #welcome{
+          animation: anim 1s infinite alternate;
+          font-weight:bolder;
+          font-size:80px;
+          font-family: cursive;
           position: absolute;
-          width:100%;
+          left:15%;
         }
+
+        @keyframes anim {
+          from {color: rgb(9, 10, 36);}
+          to {color: rgb(135, 136, 185);}
+}
 
         .inputText{
           border-style:solid;
@@ -215,6 +210,18 @@
           position: relative;
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
         </style>
 </head>
 
@@ -225,9 +232,7 @@
 
       <div class="input">
         <p id="welcome">Welcome to news.com</p>
-        <div class="inputinside">
-        <input type="text" class="inputText" placeholder="Search for the news here. . .">
-        </div>
+
       </div>
       <img id="daily" src="news2.gif" alt="dailygif">
 
@@ -255,26 +260,9 @@
               <a href="#aboutus" class = "tab">About Us</a>
 
           </div>
-  </header>
+        </header>
 
-  <div class="filter">
-      <input type="radio" name="option" value="name" id="name" checked>
-      <label for="name">Name</label>
-      <input type="radio" name="option" value="mostRead" id="mostRead">
-      <label for="mostRead">Most read</label>
-      <input type="radio" name="option" value="mostComments" id="mostComments">
-      <label for="mostComments">Most comments</label>
-      <div class="category">
-          <input type="checkbox" name="vijesti" id="vijesti">
-          <label for="vijesti">Vijesti</label>
-          <input type="checkbox" name="svijet" id="svijet">
-          <label for="svijet">Svijet</label>
-          <input type="checkbox" name="sport" id="sport">
-          <label for="sport">Sport</label>
-          <input type="checkbox" name="lifestyle" id="lifestyle">
-          <label for="lifestyle">Lifestyle</label>
-      </div>
-  </div>
+<!--ovdje ce da ide slider-->
 
   <div class="main">
       <div class="row">
@@ -370,6 +358,22 @@
           </div>
 
   </footer>
+
+  <script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;  
+    var head = document.getElementById("head");
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+        head.style.display="none";
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+</script>
 
 </body>
 </html>
