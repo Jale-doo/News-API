@@ -3,328 +3,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-
-        .slideshow-container{box-sizing: border-box;
-        }
-
-        #hometab{
-          background-color: rgb(73, 202, 202);
-        }
-
-        .header{
-          position: relative;
-        }
-
-        .sticky {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        }
-
-        #daily{
-            width: 250px;
-            float: right;
-            height: 170px;
-            position: absolute;
-            bottom: 0;
-            right: 3%;
-        }
-
-        .navbar {
-          display: flex;
-          overflow: hidden;
-          background-color: rgb(0, 0, 0);
-          width: 100%;
-          border-bottom-style:double;
-          border-bottom-color: rgb(73, 202, 202);
-          border-bottom-width: 3px;
-        }
-
-        .tab{
-          flex: 1;
-        }
-        
-        .navbar a {
-          float: left;
-          font-size: 16px;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-          font-weight: bold;
-        }
-
-        .dropdown {
-          float: left;
-          overflow: hidden;
-        }
-        
-        .dropdown .dropbtn {
-          font-size: 16px;  
-          border: none;
-          outline: none;
-          color: white;
-          padding: 14px 16px;
-          background-color: inherit;
-          font-family: inherit;
-          margin: 0;
-          font-weight: bold;
-        }
-        
-        .navbar a:hover, .dropdown:hover {
-          background-color: rgb(73, 202, 202);
-        }
-        
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: #f9f9f9;
-          min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
-        }
-        
-        .dropdown-content a {
-          float: none;
-          color: black;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-          text-align: left;
-        }
-        
-        .dropdown-content a:hover {
-          background-color: #ddd;
-        }
-        
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
-
-        .footer{
-          background-color: black;
-          width: 100%;
-          position: absolute;
-          bottom: 0;
-        }
-
-        .footer1{
-          display: flex;
-          width: 100%;
-          padding: 30px;
-          border-top-style:double;
-          border-top-color: rgb(73, 202, 202);
-          border-top-width: 3px;
-        }
-
-        .footer2{
-
-          color: white;
-          width: 100%;
-          padding: 0;
-        }
-
-        .footer2 .txt{
-          float: right;
-        }
-
-        .footer a{
-          color: white;
-          flex: 1;
-        }
-
-        #logofooter{
-          width: 50px;
-          height: 50px;
-          padding-right: 20px;
-          padding-bottom: 20px;
-        }
-
-        .socialnetworks{
-          display: flex;
-        }
-
-        .socialnetworks img{
-          width: 20px;
-          height: 20px;
-          margin-left: 5px;
-        }
-
-        .logoandsocial{
-          flex: 1;
-        }
-
-        .sport *{
-          margin-top: 5px;
-        }
-
-        .header{
-          background-color: white;
-        }
-
-        .input{
-          position: relative;
-          width: 100%;
-        }
-
-        #welcome{
-          animation: anim 1s infinite alternate;
-          font-weight:bolder;
-          font-size:80px;
-          font-family: cursive;
-          position: absolute;
-          left:15%;
-        }
-
-        @keyframes anim {
-          from {color: rgb(9, 10, 36);}
-          to {color: rgb(135, 136, 185);}
-}
-
-        .head{
-          display: flex;
-          position: relative;
-        }
-
-
-        .mySlides {display: none;}
-        img {vertical-align: middle;}
-
-        /* Slideshow container */
-        .slideshow-container {
-          max-width: 1000px;
-          position: relative;
-          margin: auto;
-        }
-
-        /* Caption text */
-        .text {
-          color: #f2f2f2;
-          font-size: 15px;
-          padding: 8px 12px;
-          position: absolute;
-          bottom: 8px;
-          width: 100%;
-          text-align: center;
-        }
-
-
-        .active {
-          background-color: #717171;
-        }
-
-        /* Fading animation */
-        .fade {
-          -webkit-animation-name: fade;
-          -webkit-animation-duration: 1.5s;
-          animation-name: fade;
-          animation-duration: 1.5s;
-        }
-
-        @-webkit-keyframes fade {
-          from {opacity: .4} 
-          to {opacity: 1}
-        }
-
-        @keyframes fade {
-          from {opacity: .4} 
-          to {opacity: 1}
-        }
-
-        /* On smaller screens, decrease text size */
-        @media only screen and (max-width: 300px) {
-          .text {font-size: 11px}
-      }
-
-
-
-      .mySlidesContent{
-        display: flex;
-      }
-
-      .mySlidesContent div{
-        flex: 1;
-      }
-
-        </style>
+     <link rel="stylesheet" href="newspage.css">
 </head>
 
 <body>
   <header class="header">
-    <div class = "head">
-      <img src="news.gif" alt="Logo">
+    <div class="navbar" id="navbar">
+        <a href="#home" class="tab" id="hometab">Home</a>
+        <a href="#politics" class="tab">Politics</a>
+        <a href="#society" class="tab">Society</a>
+        <a href="#economy" class="tab">Economy</a>
+        <a href="#science" class = "tab">Science</a>
+        <div class="dropdown tab">
+            <button class="dropbtn">Sport</button>
+            <div class="dropdown-content">
+                <a href="#">Football</a>
+                <a href="#">Basketball</a>
+                <a href="#">Tennis</a>
+                <a href="#">Other</a>
+            </div>
+            </div>
+            <a href="#health" class="tab">Health</a>
+            <a href="#lifestyle" class="tab">Lifestyle</a>
+            <a href="#horoscope" class="tab">Horoscope</a>
+            <a href="#aboutus" class = "tab">About Us</a>
 
-      <div class="input">
-        <p id="welcome">Welcome to news.com</p>
+        </div>
 
-      </div>
-      <img id="daily" src="news2.gif" alt="dailygif">
-
-    </div>
-
-      <div class="navbar" id="navbar">
-          <a href="#home" class="tab" id="hometab">Home</a>
-          <a href="#politics" class="tab">Politics</a>
-          <a href="#society" class="tab">Society</a>
-          <a href="#economy" class="tab">Economy</a>
-          <a href="#science" class = "tab">Science</a>
-          <div class="dropdown tab">
-              <button class="dropbtn">Sport &nbsp;<i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                  <a href="#">Football</a>
-                  <a href="#">Basketball</a>
-                  <a href="#">Tennis</a>
-                  <a href="#">Other</a>
-              </div>
-              </div>
-              <a href="#health" class="tab">Health</a>
-              <a href="#lifestyle" class="tab">Lifestyle</a>
-              <a href="#horoscope" class="tab">Horoscope</a>
-              <a href="#aboutus" class = "tab">About Us</a>
-
+        <div class = "head">
+          <img id = "newslogo" src="news.gif" alt="Logo">
+    
+          <div class="input">
+            <p id="welcome">Welcome to news.com</p>
+    
           </div>
+          <img id="daily" src="news2.gif" alt="dailygif">
+    
+        </div>
         </header>
 
 <!--ovdje ce da ide slider-->
-<div class="slideshow-container">
+<div class="line">
+  <div class="slideshow-container">
 
-  <div id="news" class="mySlides fade">
-    <div class = "mySlidesContent">
-    <div class = "news">prva vijest</div>
-    <div class = "news">druga vijest</div>
-    <div class = "news">treca vijest</div>
+    <div id="news" class="mySlides fade">
+      <div class = "slider">
+        <div class="content">
+          <p>Some text inside</p>
+          <button class="readMoreBtn">Read More</button>
+          <img class="backgroundImg" src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="backgroundImg">
+        </div>
+        <div class="content">
+            <p>Some text inside</p>
+            <button class="readMoreBtn">Read More</button>
+            <img class="backgroundImg" src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="backgroundImg">
+        </div>
+        <div class="content">
+            <p>Some text inside</p>
+            <button class="readMoreBtn">Read More</button>
+            <img class="backgroundImg" src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="backgroundImg">
+        </div>
+      </div>
+    </div>
+    
+    <div id="news" class="mySlides fade">
+      <div class = "slider">
+        <div class="content">
+          <p>Some text inside</p>
+          <button class="readMoreBtn">Read More</button>
+          <img class="backgroundImg" src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="backgroundImg">
+      </div>
+      <div class="content">
+          <p>Some text inside</p>
+          <button class="readMoreBtn">Read More</button>
+          <img class="backgroundImg" src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="backgroundImg">
+      </div>
+      <div class="content">
+          <p>Some text inside</p>
+          <button class="readMoreBtn">Read More</button>
+          <img class="backgroundImg" src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="backgroundImg">
+      </div>
+      </div>
+    </div>
+    
+    <div id="news" class="mySlides fade">
+      <div class = "slider">
+        <div class="content">
+          <p>Some text inside</p>
+          <button class="readMoreBtn">Read More</button>
+          <img class="backgroundImg" src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="backgroundImg">
+      </div>
+      <div class="content">
+          <p>Some text inside</p>
+          <button class="readMoreBtn">Read More</button>
+          <img class="backgroundImg" src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="backgroundImg">
+      </div>
+      <div class="content">
+          <p>Some text inside</p>
+          <button class="readMoreBtn">Read More</button>
+          <img class="backgroundImg" src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="backgroundImg">
+      </div>
+      </div>
+    </div>
+
+    <div id="news" class="mySlides fade">
+      <div class = "slider">
+        <div class="content">
+        </div>
+        <div class="content">
+          <p>Some text inside</p>
+          <button class="readMoreBtn">Read More</button>
+          <img class="backgroundImg" src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="backgroundImg">
+        </div>
+        <div class="content">
+        </div>
+      </div>
+    </div>
+    <div class="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"><</span>
+    </div>
+    <div class="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">></span>
+    </div>
+
+  </div>
+
+
+  <div class="right">
+    <div class="best">
+        <div class="content">
+            <img src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="bestNews">
+            <p>Title</p>
+        </div>
+
+        <div class="content">
+            <img src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="bestNews">
+            <p>Title</p>
+        </div>
+    </div>
+
+    <div class="facebook">
+        <div class="content">
+            <p>Info facebook</p>
+        </div>
     </div>
   </div>
-  
-  <div id="news" class="mySlides fade">
-    <div class = "mySlidesContent">
-    <div class = "news">cetvrta vijest</div>
-    <div class = "news">peta vijest</div>
-    <div class = "news">sesta vijest</div>
-    </div>
+</div>
+
+
+
+<div class="topRated">
+  <div class="row">
+      <div  class="content">
+          <img src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="topRatedNews">
+          <div class="text">
+              <p>Title</p>
+              <p>Some value</p>
+              <p>Another value</p>
+          </div>
+      </div>
+
+      <div  class="content">
+          <img src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="topRatedNews">
+          <div class="text">
+              <p>Title</p>
+              <p>Some value</p>
+              <p>Another value</p>
+          </div>
+      </div>
+
+      <div  class="content">
+          <img src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="topRatedNews">
+          <div class="text">
+              <p>Title</p>
+              <p>Some value</p>
+              <p>Another value</p>
+          </div>
+      </div>
   </div>
-  
-  <div id="news" class="mySlides fade">
-    <div class = "mySlidesContent">
-    <div class = "news">sedma vijest</div>
-    <div class = "news">osma vijest</div>
-    <div class = "news">deveta vijest</div>
-    </div>
+
+  <div class="row">
+      <div  class="content modalWindow">
+          <img src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="topRatedNews">
+          <div class="text">
+              <p>Title</p>
+              <p>Some value</p>
+              <p>Another value</p>
+          </div>
+      </div>
+
+      <div  class="content modalWindow">
+          <img src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="topRatedNews">
+          <div class="text">
+              <p>Title</p>
+              <p>Some value</p>
+              <p>Another value</p>
+          </div>
+      </div>
+
+      <div  class="content modalWindow">
+          <img src="https://image.shutterstock.com/image-vector/breaking-news-world-map-backgorund-260nw-640991758.jpg" alt="topRatedNews">
+          <div class="text">
+              <p>Title</p>
+              <p>Some value</p>
+              <p>Another value</p>
+          </div>
+      </div>
   </div>
 
-  <div id="news" class="mySlides fade">
-    <div class = "mySlidesContent">
-    <div class = "news">deseta vijest</div>
-    </div>
-  </div>
-  
-  </div>
+  <button class="loadMoreBtn">Load More</button>
+</div>
 
 
 
@@ -337,7 +225,44 @@
 
 
 
-  <footer class="footer">
+
+
+
+
+
+
+
+
+
+
+
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+
+
+
+<footer class="footer">
     <div class = "footer1">
     <div class = "logoandsocial">
       <img src="https://media-cdn.tripadvisor.com/media/photo-s/10/f1/d2/5a/tiger-black-logo.jpg" id="logofooter" alt="logo">
@@ -366,21 +291,19 @@
 
         <div class = "footer2">
           <p>© All Rights Reserved</p>
-          </div>
+        </div>
 
   </footer>
 
   <script>
     window.onscroll = function() {myFunction()};
-    
     var navbar = document.getElementById("navbar");
     var sticky = navbar.offsetTop;  
-    var head = document.getElementById("head");
     function myFunction() {
       if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-        head.style.display="none";
-      } else {
+        navbar.classList.add("sticky");
+      }
+      else {
         navbar.classList.remove("sticky");
       }
     }
@@ -389,7 +312,7 @@
 
 
 
-    var slideIndex = 0;
+var slideIndex = 0;
 showSlides();
 
 function showSlides() {
@@ -406,6 +329,9 @@ function showSlides() {
 
   setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
+
+var prev = document.getElementsByClassName("prev")[0];
+
 </script>
 
 </body>
