@@ -6,13 +6,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #hometab{
+          background-color: rgb(73, 202, 202);
+        }
+
+        #welcome{
+          animation: anim 1s infinite alternate;
+          font-weight:bolder;
+          font-size:x-large;
+          margin-left: 25%;
+          font-family: cursive;
+        }
+
+        @keyframes anim {
+          from {color: rgb(9, 10, 36);}
+          to {color: rgb(135, 136, 185);}
+}
+
+@keyframes anim2 {
+  from {color: rgb(255, 255, 255);}
+  to {color: rgb(9, 10, 36);}
+}
+
+
+        .header{
+          position: relative;
         }
 
         #daily{
-            width: 350px;
+            width: 250px;
             float: right;
-            height: 180px;
+            height: 140px;
+            position: absolute;
+            bottom: 0;
+            right: 3%;
         }
 
         .navbar {
@@ -20,6 +50,9 @@
           overflow: hidden;
           background-color: rgb(0, 0, 0);
           width: 100%;
+          border-bottom-style:double;
+          border-bottom-color: rgb(73, 202, 202);
+          border-bottom-width: 3px;
         }
 
         .tab{
@@ -33,12 +66,7 @@
           text-align: center;
           padding: 14px 16px;
           text-decoration: none;
-        }
-        
-        .sticky {
-        position: fixed;
-        top: 0;
-        width: 100%;
+          font-weight: bold;
         }
 
         .dropdown {
@@ -55,10 +83,11 @@
           background-color: inherit;
           font-family: inherit;
           margin: 0;
+          font-weight: bold;
         }
         
         .navbar a:hover, .dropdown:hover {
-          background-color: red;
+          background-color: rgb(73, 202, 202);
         }
         
         .dropdown-content {
@@ -86,20 +115,132 @@
         .dropdown:hover .dropdown-content {
           display: block;
         }
+
+        .footer{
+          background-color: black;
+          width: 100%;
+        }
+
+        .footer1{
+          display: flex;
+          background-color: black;
+          width: 100%;
+          padding: 30px;
+          margin-top: 30px;
+          display: flex;
+          border-top-style:double;
+          border-top-color: rgb(73, 202, 202);
+          border-top-width: 3px;
+        }
+
+        .footer2{
+          background-color: black;
+          color: white;
+          width: 100%;
+          padding: 0;
+        }
+
+        .footer2 .txt{
+          float: right;
+        }
+
+        .footer a{
+          color: white;
+          flex: 1;
+        }
+
+        #logofooter{
+          width: 50px;
+          height: 50px;
+          padding-right: 20px;
+          padding-bottom: 20px;
+        }
+
+        .socialnetworks{
+          display: flex;
+        }
+
+        .socialnetworks img{
+          width: 20px;
+          height: 20px;
+          margin-left: 5px;
+        }
+
+        .logoandsocial{
+          flex: 1;
+        }
+
+        .sport *{
+          margin-top: 5px;
+        }
+
+        .header{
+          background-color: white;
+        }
+
+        .input{
+          position: relative;
+          width: 100%;
+        }
+
+        .inputinside{
+          margin-top: 0;
+          position: absolute;
+          width:100%;
+        }
+
+        .inputText{
+          border-style:solid;
+          border-color: rgb(3, 10, 29);
+          border-width: 3px;
+          height: 40px;
+          width: 75%;
+          padding-left: 5px;
+        }
+
+        .searchBtn{
+          background-color: rgb(73, 202, 202);
+          color:rgb(11, 11, 22);
+          height:30px;
+          width:30%;
+          margin-left:35%;
+          margin-top: 5px;
+          font-weight: bold;
+          font-size: large;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .head{
+          display: flex;
+          position: relative;
+        }
+
         </style>
 </head>
 
 <body>
   <header class="header">
+    <div class = "head">
       <img src="news.gif" alt="Logo">
+
+      <div class="input">
+        <p id="welcome">Welcome to news.com</p>
+        <div class="inputinside">
+        <input type="text" class="inputText" placeholder="Search for the news here. . .">
+        </div>
+      </div>
       <img id="daily" src="news2.gif" alt="dailygif">
+
+    </div>
+
       <div class="navbar" id="navbar">
-          <a href="#home" class="tab">Home</a>
+          <a href="#home" class="tab" id="hometab">Home</a>
           <a href="#politics" class="tab">Politics</a>
           <a href="#society" class="tab">Society</a>
           <a href="#economy" class="tab">Economy</a>
+          <a href="#science" class = "tab">Science</a>
           <div class="dropdown tab">
-              <button class="dropbtn">Sport &nbsp;&nbsp<i class="fa fa-caret-down"></i>
+              <button class="dropbtn">Sport &nbsp;<i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content">
                   <a href="#">Football</a>
@@ -110,14 +251,12 @@
               </div>
               <a href="#health" class="tab">Health</a>
               <a href="#lifestyle" class="tab">Lifestyle</a>
-              <a href="#horoscope" class="tab">Horoscope</a> 
+              <a href="#horoscope" class="tab">Horoscope</a>
+              <a href="#aboutus" class = "tab">About Us</a>
+
           </div>
   </header>
-<br><br><br><br>
-  <div class="input">
-      <input type="text" class="inputText">
-      <button class="searchBtn">Search</button>
-  </div>
+
   <div class="filter">
       <input type="radio" name="option" value="name" id="name" checked>
       <label for="name">Name</label>
@@ -200,30 +339,37 @@
   </nav>
 
   <footer class="footer">
-      <nav>
-          <a href="index.html" target="_blank">Home</a>
-          <a href="./html/list.html" target="_blank">List</a>
-          <a href="./html/customPage.html" target="_blank">Custom Page</a>
-          <a href="./html/aboutUs.html" target="_blank">About us</a>
-      </nav>
+    <div class = "footer1">
+    <div class = "logoandsocial">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/10/f1/d2/5a/tiger-black-logo.jpg" id="logofooter" alt="logo">
+      <div class = "socialnetworks">
+        <img src="https://toppng.com/uploads/thumbnail//circle-fb-icon-white-11563092286dc7puxbp4k.png" alt="fb">
+        <img src="https://cdn.icon-icons.com/icons2/1211/PNG/512/1491579602-yumminkysocialmedia36_83067.png" alt="in">
+      </div>
+    </div>  
+          <a href="newspage.html" target="_blank">Home</a>
+          <a href="./html/politics.html" target="_blank">Politics</a>
+          <a href="./html/society.html" target="_blank">Society</a>
+          <a href="./html/economy.html" target="_blank">Economy</a>
+          <div class = "sport">
+            <a href="./html/sport.html" target="_blank">Sport <br>
+            <a href="football.html" target="_blank">Football</a><br>
+            <a href="./html/basketball.html" target="_blank">Basketball</a><br>
+            <a href="./html/tennis.html" target="_blank">Tennis</a><br>
+            <a href="./html/other.html" target="_blank">Other</a>      
+          </div>
+
+          <a href="./html/health.html" target="_blank">Health</a>
+          <a href="./html/lifestyle.html" target="_blank">Lifestyle</a>
+          <a href="./html/horoscope.html" target="_blank">Horoscope</a>
+          <a href="./html/aboutus.html" target="_blank">About Us</a>
+        </div>
+
+        <div class = "footer2">
+          <p>© All Rights Reserved</p>
+          </div>
+
   </footer>
-
-
-
-  <script>
-      window.onscroll = function() {myFunction()};
-      
-      var navbar = document.getElementById("navbar");
-      var sticky = navbar.offsetTop;
-      
-      function myFunction() {
-        if (window.pageYOffset >= sticky) {
-          navbar.classList.add("sticky")
-        } else {
-          navbar.classList.remove("sticky");
-        }
-      }
-  </script>
 
 </body>
 </html>
