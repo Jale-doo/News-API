@@ -9,39 +9,41 @@
 <body>
   <header class="header">
     <div class="navbar" id="navbar">
-        <a href="#home" class="tab" id="hometab">Home</a>
-        <a href="#politics" class="tab">Politics</a>
-        <a href="#society" class="tab">Society</a>
-        <a href="#economy" class="tab">Economy</a>
-        <a href="#science" class = "tab">Science</a>
-        <div class="dropdown tab">
-            <button class="dropbtn">Sport</button>
-            <div class="dropdown-content">
-                <a href="#">Football</a>
-                <a href="#">Basketball</a>
-                <a href="#">Tennis</a>
-                <a href="#">Other</a>
-            </div>
-            </div>
-            <a href="#health" class="tab">Health</a>
-            <a href="#lifestyle" class="tab">Lifestyle</a>
-            <a href="#horoscope" class="tab">Horoscope</a>
-            <a href="#aboutus" class = "tab">About Us</a>
-
+      <a href="#home" class="tab" id="hometab">Home</a>
+      <a href="#politics" class="tab">Politics</a>
+      <a href="#society" class="tab">Society</a>
+      <a href="#economy" class="tab">Economy</a>
+      <a href="#science" class = "tab">Science</a>
+      <div class="dropdown tab">
+        <button class="dropbtn">Sport</button>
+        <div class="dropdown-content">
+            <a href="#">Football</a>
+            <a href="#">Basketball</a>
+            <a href="#">Tennis</a>
+            <a href="#">Other</a>
         </div>
+      </div>
+        
+      <a href="#health" class="tab">Health</a>
+      <a href="#lifestyle" class="tab">Lifestyle</a>
+      <a href="#horoscope" class="tab">Horoscope</a>
+      <a href="#aboutus" class = "tab" id="aboutus">About Us</a>
 
-        <div class = "head">
-          <img id = "newslogo" src="news.gif" alt="Logo">
-    
-          <div class="input">
-            <p id="welcome">Welcome to news.com</p>
-    
-          </div>
-          <img id="daily" src="news2.gif" alt="dailygif">
-    
-        </div>
-        </header>
+    </div>
 
+    <div class = "head" id="head">
+      <img id = "newslogo" src="news.gif" alt="Logo">
+  
+      <div class="input">
+        <p id="welcome">Welcome to news.com</p>
+      </div>
+
+      <img id="daily" src="news2.gif" alt="dailygif">
+    </div>
+
+  </header>
+
+<div class = "home">
 <!--ovdje ce da ide slider-->
 <div class="line">
   <div class="slideshow-container">
@@ -431,6 +433,36 @@
   <!--<button class="loadMoreBtn">Load More</button>-->
 </div>
 
+</div>
+
+
+<!--ABOUT US-->
+
+<div class = "pageaboutus head" id = "pageaboutus">
+  <p>Neki tekst o nama tralalallalallalla alalallala alallala ala ala aa ala laalalla alalla</p>
+  <div class = "imgcont">
+    <img src="team1.jpg" alt="news.com team" class = "team head">
+    <div class="overlay">
+      <div class="teamtext">Neki tekst o nasem timu ili zaposljavanju...</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <footer class="footer">
     <div class = "footer1">
@@ -463,7 +495,8 @@
           <p>© All Rights Reserved</p>
         </div>
 
-  </footer>
+      </footer>
+
 
 
 
@@ -471,6 +504,14 @@
 
 
 <script>
+
+  var pageaboutus = document.getElementsByClassName("pageaboutus")[0];
+  pageaboutus.classList.remove("pageaboutus");
+  pageaboutus.classList.remove("head");
+  pageaboutus.classList.add("none");
+
+  document.getElementById("hometab").classList.add("selected");
+
   window.onscroll = function() {myFunction()};
   var navbar = document.getElementById("navbar");
   var sticky = navbar.offsetTop;  
@@ -541,6 +582,34 @@ var xxx = document.getElementsByClassName("close")[0];
 xxx.onclick = function() { 
   full.style.display = "none";
 }
+
+var pageaboutus = document.getElementById("pageaboutus");
+
+var aboutus = document.getElementById("aboutus");
+aboutus.addEventListener("click", function(e){
+  document.getElementById("hometab").classList.remove("selected");
+
+  aboutus.classList.add("selected");
+  document.getElementsByClassName("home")[0].classList.add("none");
+  document.getElementById("head").classList.remove("head");
+  document.getElementById("head").classList.add("none");
+  pageaboutus.classList.remove("none");
+  pageaboutus.classList.add("pageaboutus");
+  pageaboutus.classList.add("head");
+})
+
+var hometab = document.getElementById("hometab");
+hometab.addEventListener("click", function(e){
+  aboutus.classList.remove("selected");
+
+  hometab.classList.add("selected");
+  document.getElementsByClassName("home")[0].classList.remove("none");
+  document.getElementById("head").classList.remove("none");
+  document.getElementById("head").classList.add("head");
+  pageaboutus.classList.remove("pageaboutus");
+  pageaboutus.classList.remove("head");
+  pageaboutus.classList.add("none");
+})
 
 </script>
 
