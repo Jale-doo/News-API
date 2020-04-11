@@ -492,6 +492,7 @@
     }
   }
 
+  var animate;
 
   var slideIndex = 0;
   showSlides();
@@ -508,12 +509,30 @@
 
     slides[slideIndex-1].style.display = "block";  
 
-    setTimeout(showSlides, 3500); // Change image every 2 seconds
+    animate = setTimeout(showSlides, 3500); // Change image every 3.5 seconds
   }
 
   var prev = document.getElementsByClassName("prev")[0];
+  var next = document.getElementsByClassName("next")[0];
 
+  prev.addEventListener("click", function(e){
+      if(slideIndex==1){
+          slideIndex=3;
+      }
+      else if(slideIndex==2){
+          slideIndex=4;
+      }
+      else{
+          slideIndex=slideIndex-2;
+      }
+      clearTimeout(animate);
+      showSlides();
+  });
 
+  next.addEventListener("click", function(e){
+      clearTimeout(animate);
+      showSlides();
+  });
 
 
 
