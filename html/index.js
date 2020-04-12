@@ -198,7 +198,7 @@ function searchHandler(e){
                         <img src="${articles[i]["urlToImage"]}" alt="something">
                         <h1>${articles[i]["title"]}</h1> `
                     fullScreen.children[2].innerHTML = `
-                        <p>${articles[i]["description"]} <button><a href="${articles[i]["url"]}">Read More</a></button></p>
+                        <p>${articles[i]["content"].split("[+")[0]} <button><a href="${articles[i]["url"]}">Read More</a></button></p>
                         
                     `
                 })

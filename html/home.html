@@ -32,13 +32,13 @@
           <a href="lifestyle.html" class="tab e">Lifestyle</a>
           <a href="horoscope.html" class="tab e">Horoscope</a>
           <a href="aboutus.html" class = "tab e" id="aboutus">About Us</a>
-          <a href="list.html">Advanced search</a>
+          <a href="list.html" class="e">Advanced search</a>
           <a href="javascript:void(0);" class="icon" onclick="navResponsive()">
             <i class="fa fa-bars"></i>
           </a> 
         </div>
     
-        <div class = "head" id="head">
+        <!-- <div class = "head" id="head">
             <img id = "newslogo" src="news.gif" alt="Logo">
         
             <div class="input">
@@ -46,7 +46,7 @@
             </div>
       
             <img id="daily" src="news2.gif" alt="dailygif">
-        </div>
+        </div> -->
     
     </header>
 
@@ -500,17 +500,17 @@
 
   document.getElementById("hometab").classList.add("selected");
 
-  window.onscroll = function() {myFunction()};
-  var navbar = document.getElementById("navbar");
-  var sticky = navbar.offsetTop;  
-  function myFunction() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky");
-    }
-    else {
-      navbar.classList.remove("sticky");
-    }
-  }
+//   window.onscroll = function() {myFunction()};
+//   var navbar = document.getElementById("navbar");
+//   var sticky = navbar.offsetTop;  
+//   function myFunction() {
+//     if (window.pageYOffset >= sticky) {
+//       navbar.classList.add("sticky");
+//     }
+//     else {
+//       navbar.classList.remove("sticky");
+//     }
+//   }
 
   var animate;
 
@@ -600,6 +600,7 @@ var home = document.getElementById("hometab");
 home.classList.add("selected");
 
 </script>
-<script src="index.js"></script>
+
+<!-- <script src="index.js"></script> -->
 </body>
 </html>

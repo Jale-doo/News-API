@@ -23,7 +23,7 @@ body {
   left:0;
   width: 90%; /* Full width */
   max-height: 85%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Enable scroll if needed */
   background-color: white;
   margin: 5%;
 }
@@ -32,6 +32,8 @@ body {
 }
 .fullscreen > .textInFullScreen > img{
   width: 100%;
+  height: 550px;
+  object-fit: cover;
 }
 .fullscreen > .textInFullScreen > h1{
   position: absolute;
