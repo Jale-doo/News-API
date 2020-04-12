@@ -1,11 +1,64 @@
+var current_page = 1;
+var records_per_page = 9;
+var numOfPages = 1;
+
+var btn_next = document.getElementById("btn_next");
+var btn_prev = document.getElementById("btn_prev");
+var page_span = document.getElementById("page");
+
+btn_next.addEventListener("click", searchHandler);
+btn_prev.addEventListener("click", searchHandler);
+
+
+// function prevPage()
+// {
+//     if (current_page > 1) {
+//         current_page--;
+//         searchHandler(current_page);
+//     }
+// }
+
+// function nextPage(e,numOfPages)
+// {
+//     if (current_page < numOfPages) {
+//         current_page++;
+//         searchHandler(current_page);
+//     }
+// }
+    
+
+// function numPages()
+// {
+//     return Math.ceil(objJson.length / records_per_page);
+// }
+
+// window.onload = function() {
+//     searchHandler(1);
+// };
 
 var search = document.getElementById("search");
 search.addEventListener("click", searchHandler);
 
-var dataFromServer;
 
 function searchHandler(e){
     e.preventDefault();
+    document.getElementById("pagination").style.visibility = "visible";
+
+    if(e.target.id === "search"){
+        current_page = 1;
+    }
+    if(e.target.id == "btn_next"){
+        
+        if (current_page < numOfPages) {
+            current_page++;
+        }
+        
+    }
+    if(e.target.id == "btn_prev"){
+        if (current_page > 1) {
+            current_page--;
+        }
+    }
 
     var newsText = document.getElementById("filter").value;
 
@@ -27,7 +80,8 @@ function searchHandler(e){
     }
 
     if(topHeadlines.checked){
-        var url = "https://newsapi.org/v2/top-headlines?apiKey=c5513454f4d94b9fbca2b31ce9b4f1a6"
+        var url = "https://newsapi.org/v2/top-headlines?apiKey=c5513454f4d94b9fbca2b31ce9b4f1a6&pageSize=9"
+        url += `&page=${current_page}`;
         if(selectedCountry != ""){
             url += `&country=${selectedCountry}`;
         }
@@ -55,7 +109,8 @@ function searchHandler(e){
             return
         }
     }else{
-        var url = "https://newsapi.org/v2/everything?apiKey=c5513454f4d94b9fbca2b31ce9b4f1a6"    
+        var url = "https://newsapi.org/v2/everything?apiKey=c5513454f4d94b9fbca2b31ce9b4f1a6&pageSize=9&language=en"
+        url += `&page=${current_page}`;    
         url += `&sortBy=${sorted}`;
         if(fromDate != ""){
             url += `&from=${fromDate}`;
@@ -78,6 +133,7 @@ function searchHandler(e){
     }
     
     
+    
     console.log(url);
 
     document.getElementById("data").innerHTML = "";
@@ -90,6 +146,29 @@ function searchHandler(e){
         })
         .then(function(jsObjectData){
             var articles = jsObjectData["articles"];
+            numOfPages = parseInt(jsObjectData["totalResults"]/9)+1;
+    
+
+            // Validate page
+            if (current_page < 1) page = 1;
+            if (current_page > numOfPages) current_page = numOfPages;
+
+            // Promijeni sadrzaj data
+            page_span.innerHTML = current_page + "/" + numOfPages;
+
+            if (current_page == 1) {
+                btn_prev.style.visibility = "hidden";
+            } else {
+                btn_prev.style.visibility = "visible";
+            }
+
+            if (current_page == numOfPages) {
+                btn_next.style.visibility = "hidden";
+            } else {
+                btn_next.style.visibility = "visible";
+            }
+
+
             var row = document.createElement("div");
             row.classList.add("row");
             for(let i = 0; i < articles.length; i++){
@@ -123,22 +202,26 @@ function searchHandler(e){
                         
                     `
                 })
+
                 
                 row.appendChild(con);
+                
+                if(articles.length < 9){
+                    if((articles.length-i)===1){
+                        document.getElementById("data").appendChild(row);
+                        row = document.createElement("div");
+                        row.classList.add("row");
+                        continue;
+                    }
+                }
 
-
-                if(i%3 === 2){
+                if((i+1)%3 === 0){
                     document.getElementById("data").appendChild(row);
                     row = document.createElement("div");
                     row.classList.add("row");
                 }
-                if(i%20===19){
-                    return
-                }
             }
         })
-
-    
 }
 
 document.getElementById("topHeadlines").addEventListener("click", checkHandler);

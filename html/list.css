@@ -441,11 +441,16 @@ body {
   }
 }
 
-.loadMoreBtn{
+.pagination{
+  visibility: hidden;
   position: relative;
-  left: 50%;
+  text-align: center;
   padding: 1rem;
-  transform: translate(-50%,0);
-  margin-bottom: 30px;
+}
+.pagination > a{
+  text-decoration: none;
+  padding: 10px;
+  background-color: rgb(5, 39, 134);
   border-radius: 25px;
+  color: white;
 }
