@@ -84,6 +84,15 @@
   </footer>
 
   <script>
+    function navResponsive() {
+        var x = document.getElementById("navbar");
+        if (x.className === "navbar") {
+            x.classList.add("responsive");
+        } else {
+            x.className = "navbar";
+        }
+    }
+
     var listoftabs = document.getElementsByClassName("e");
 
     for(let i=0; i<listoftabs.length;i++){

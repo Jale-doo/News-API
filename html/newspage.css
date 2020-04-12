@@ -137,12 +137,13 @@ body {
       flex-direction: column;
       position: relative;
   }
-  .navbar a:not(:first-child) ,.navbar > .dropdown:not(:first-child) {display: none;}
+  .navbar a:not(.selected) ,.navbar > .dropdown:not(:first-child) {display: none;}
   .navbar a.icon{
       display: block;
       position: absolute;
       right: 0;
-  }
+      z-index: 2;
+  } 
   .tab{
       flex: 1;
   }

@@ -479,7 +479,14 @@
     </footer>
 
 <script>
-
+    function navResponsive() {
+        var x = document.getElementById("navbar");
+        if (x.className === "navbar") {
+            x.classList.add("responsive");
+        } else {
+            x.className = "navbar";
+        }
+    }
   var pageaboutus = document.getElementsByClassName("pageaboutus")[0];
   pageaboutus.classList.remove("pageaboutus");
   pageaboutus.classList.remove("head");

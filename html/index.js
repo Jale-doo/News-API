@@ -9,33 +9,6 @@ var page_span = document.getElementById("page");
 btn_next.addEventListener("click", searchHandler);
 btn_prev.addEventListener("click", searchHandler);
 
-
-// function prevPage()
-// {
-//     if (current_page > 1) {
-//         current_page--;
-//         searchHandler(current_page);
-//     }
-// }
-
-// function nextPage(e,numOfPages)
-// {
-//     if (current_page < numOfPages) {
-//         current_page++;
-//         searchHandler(current_page);
-//     }
-// }
-    
-
-// function numPages()
-// {
-//     return Math.ceil(objJson.length / records_per_page);
-// }
-
-// window.onload = function() {
-//     searchHandler(1);
-// };
-
 var search = document.getElementById("search");
 search.addEventListener("click", searchHandler);
 

@@ -115,6 +115,7 @@ body {
     border-bottom-style:double;
     border-bottom-color: rgb(52, 52, 197);
     border-bottom-width: 3px;
+    margin-bottom: 1rem;
   }
   
   .tab{
@@ -295,12 +296,22 @@ body {
   
 
   .header{
-    background-color: white;
     position: relative;
+    margin-bottom: 1rem;
   }
 
 .header > h1{
-    text-align: center;
+  text-align: center;
+  width: 40%;
+  margin: auto;
+  padding: 2rem;
+  color: white;
+  font-size: 50px;
+  font-family: "Lucida Console", Monaco, monospace;
+  border-radius: 25px;
+  background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);
+
 }
 
 .input{
