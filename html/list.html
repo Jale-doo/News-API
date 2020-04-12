@@ -32,7 +32,7 @@
             <a href="lifestyle.html" class="tab e">Lifestyle</a>
             <a href="horoscope.html" class="tab e">Horoscope</a>
             <a href="aboutus.html" class = "tab e" id="aboutus">About Us</a>
-            <a href="list.html">Advanced search</a>
+            <a href="list.html" class="tab e" id="listtab">Advanced search</a>
             <a href="javascript:void(0);" class="icon" onclick="navResponsive()">
               <i class="fa fa-bars"></i>
             </a> 
@@ -171,92 +171,17 @@
         }
     }
 
-  document.getElementById("hometab").classList.add("selected");
+    document.getElementById("hometab").classList.add("selected");
 
-  window.onscroll = function() {myFunction()};
-  var navbar = document.getElementById("navbar");
-  var sticky = navbar.offsetTop;  
-  function myFunction() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky");
+  
+    var listoftabs = document.getElementsByClassName("e");
+
+    for(let i=0; i<listoftabs.length;i++){
+        listoftabs[i].classList.remove("selected");
     }
-    else {
-      navbar.classList.remove("sticky");
-    }
-  }
 
-  var animate;
-
-  var slideIndex = 0;
-  showSlides();
-
-  function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-
-    slides[slideIndex-1].style.display = "block";  
-
-    animate = setTimeout(showSlides, 3500); // Change image every 3.5 seconds
-  }
-
-  var prev = document.getElementsByClassName("prev")[0];
-  var next = document.getElementsByClassName("next")[0];
-
-  prev.addEventListener("click", function(e){
-      if(slideIndex==1){
-          slideIndex=3;
-      }
-      else if(slideIndex==2){
-          slideIndex=4;
-      }
-      else{
-          slideIndex=slideIndex-2;
-      }
-      clearTimeout(animate);
-      showSlides();
-  });
-
-  next.addEventListener("click", function(e){
-      clearTimeout(animate);
-      showSlides();
-  });
-
-
-
-  document.getElementsByClassName("row1")[0].style.display = "flex";
-  document.getElementsByClassName("row1")[1].style.display = "flex";
-  document.getElementsByClassName("row1")[0].classList.remove("row1");
-  document.getElementsByClassName("row1")[0].classList.remove("row1");
-
-
-
-  document.getElementById("loadMore").addEventListener("click", function (e) {
-          e.preventDefault();
-          var s = document.getElementsByClassName("row1")[0];
-          s.style.display = "flex";
-          s.classList.remove("row1");
-
-          if (document.getElementsByClassName("row1").length == 0) {
-              document.getElementById("load").fadeOut('slow');
-          }
-
-  });
-
-
-var listoftabs = document.getElementsByClassName("e");
-
-for(let i=0; i<listoftabs.length;i++){
-    listoftabs[i].classList.remove("selected");
-}
-
-var home = document.getElementById("hometab");
-home.classList.add("selected");
+    var listtab = document.getElementById("listtab");
+    listtab.classList.add("selected");
 
 </script>
 
