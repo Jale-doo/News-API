@@ -45,7 +45,10 @@ fetch(urlSlider)
         var mySlides = document.createElement("div");
         mySlides.classList.add("mySlides" ,"fade");
 
-        for(let i = 0; i< 10; i++){
+        for(let i = 0; i< articles.length; i++){
+            if(i >= 9){
+                break;
+            }
 
             var slider = document.createElement("div");
             slider.className = "slider";
