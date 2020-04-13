@@ -1,0 +1,178 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="newspage.css">
+
+     <!-- Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="navbar" id="navbar">
+      <a href="home.html" class="tab e" id="hometab">Home</a>
+      <a href="politics.html" class="tab e" id="politicstab">Politics</a>
+      <a href="society.html" class="tab e" id="societytab">Society</a>
+      <a href="economy.html" class="tab e" id="economytab">Economy</a>
+      <a href="science.html" class = "tab e" id="sciencetab">Science</a>
+      <div class="dropdown tab">
+        <button class="dropbtn e" id="sporttab">Sport</button>
+        <div class="dropdown-content">
+            <a href="football.html" id="footballtab">Football</a>
+            <a href="basketball.html" id="basketballtab">Basketball</a>
+            <a href="tennis.html" id="tennistab">Tennis</a>
+            <a href="other.html" id="othertab">Other</a>
+        </div>
+      </div>
+        
+      <a href="health.html" class="tab e" id="healthtab">Health</a>
+      <a href="lifestyle.html" class="tab e" id="lifestyletab">Lifestyle</a>
+      <a href="technology.html" class="tab e" id="horoscopetab">Technology</a>
+      <a href="aboutus.html" class = "tab e" id="aboutus">About Us</a>
+      <a href="list.html" class="e">Advanced search</a>
+      <a href="javascript:void(0);" class="icon" onclick="navResponsive()">
+        <i class="fa fa-bars"></i>
+      </a> 
+    </div>
+
+    <!-- <div class = "head" id="head">
+        <img id = "newslogo" src="news.gif" alt="Logo">
+    
+        <div class="input">
+          <p id="welcome">Welcome to news.com</p>
+        </div>
+  
+        <img id="daily" src="news2.gif" alt="dailygif">
+    </div> -->
+
+</header>
+<div class="preHome">
+    <h1>Headlines</h1>
+    <h2>Latest news</h2>
+</div>
+<div class = "home">
+    <!--ovdje ce da ide slider-->
+    <div class="line">
+        <div class="slideshow-container">
+    
+            <div class="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"><</span>
+            </div>
+            
+            <div class="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">></span>
+            </div>
+        </div>
+
+
+        <div class="right">
+            <div class="best" id="best">
+                
+            </div>
+
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+        
+            <div class="fb-page content" data-href="https://www.facebook.com/bbcnews/" data-tabs="timeline" data-width="200px" data-height="200px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+            </div>
+        
+            <blockquote cite="https://www.facebook.com/bbcnews/" class="fb-xfbml-parse-ignore">
+                <a href="https://www.facebook.com/bbcnews/">Facebook</a>
+            </blockquote>
+            
+        </div>
+    </div>
+
+<div class="topRated" id="topRated">
+    
+              
+</div>
+
+<div class="loadMore">
+    <a href="#" id="loadMore">Load More</a>
+</div>
+
+<div id="myFullScreen" class="fullscreen">
+    <span class="close" id="close">&times;</span>
+    <div class="textInFullScreen">
+        <img src="#" alt="something">
+        <h1>Naslov</h1>
+    </div>
+    <div class="content">
+        <p>context <button><a href="#">Read More</a></button></p>
+        
+    </div>
+</div>  
+
+<footer class="footer">
+<div class = "footer1">
+    <div class = "logoandsocial">
+    <img src="https://media-cdn.tripadvisor.com/media/photo-s/10/f1/d2/5a/tiger-black-logo.jpg" id="logofooter" alt="logo">
+    <div class = "socialnetworks">
+        <img src="https://toppng.com/uploads/thumbnail//circle-fb-icon-white-11563092286dc7puxbp4k.png" alt="fb">
+        <img src="https://cdn.icon-icons.com/icons2/1211/PNG/512/1491579602-yumminkysocialmedia36_83067.png" alt="in">
+    </div>
+    </div>  
+    
+    <a href="home.html">Home</a>
+    <a href="politics.html">Politics</a>
+    <a href="society.html">Society</a>
+    <a href="economy.html">Economy</a>
+    <div class = "sport">
+      <a href="#">Sport <br>
+      <a href="football.html">Football</a><br>
+      <a href="basketball.html">Basketball</a><br>
+      <a href="tennis.html">Tennis</a><br>
+      <a href="other.html">Other</a>      
+    </div>
+
+    <a href="health.html">Health</a>
+    <a href="lifestyle.html">Lifestyle</a>
+    <a href="technology.html">Technology</a>
+    <a href="aboutus.html">About Us</a>
+</div>
+
+<div class = "footer2">
+  <p>© All Rights Reserved</p>
+</div>
+
+</footer>
+
+
+
+
+
+
+
+<script>
+function navResponsive() {
+    var x = document.getElementById("navbar");
+    if (x.className === "navbar") {
+        x.classList.add("responsive");
+    } else {
+        x.className = "navbar";
+    }
+}
+
+
+
+
+document.getElementById("hometab").classList.add("selected");
+
+var listoftabs = document.getElementsByClassName("e");
+
+for(let i=0; i<listoftabs.length;i++){
+    listoftabs[i].classList.remove("selected");
+}
+
+var society = document.getElementById("societytab");
+society.classList.add("selected");
+
+</script>
+
+<!-- <script src="index.js"></script> -->
+<script src="home.js"></script>
+</body>
+</html>
