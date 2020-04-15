@@ -15,7 +15,7 @@ search.addEventListener("click", searchHandler);
 
 function searchHandler(e){
     e.preventDefault();
-    document.getElementById("pagination").style.visibility = "visible";
+    document.getElementById("pagination").classList.add("visible");
 
     if(e.target.id === "search"){
         current_page = 1;
@@ -130,15 +130,19 @@ function searchHandler(e){
             page_span.innerHTML = current_page + "/" + numOfPages;
 
             if (current_page == 1) {
-                btn_prev.style.visibility = "hidden";
+                btn_prev.classList.add("hidden");
+                btn_prev.classList.remove("visible");
             } else {
-                btn_prev.style.visibility = "visible";
+                btn_prev.classList.add("visible");
+                btn_prev.classList.remove("hidden");
             }
 
             if (current_page == numOfPages) {
-                btn_next.style.visibility = "hidden";
+                btn_next.classList.add("hidden");
+                btn_next.classList.remove("visible");
             } else {
-                btn_next.style.visibility = "visible";
+                btn_next.classList.add("visible");
+                btn_next.classList.remove("hidden");
             }
 
 
@@ -166,7 +170,7 @@ function searchHandler(e){
                 con.addEventListener("click", () => {
                     
                     var fullScreen = document.getElementById("myFullScreen");
-                    fullScreen.style.display = "block";
+                    fullScreen.classList.add("block");
                     fullScreen.children[1].innerHTML = `
                         <img src="${articles[i]["urlToImage"]}" alt="something">
                         <h1>${articles[i]["title"]}</h1> `
@@ -200,20 +204,31 @@ function searchHandler(e){
 document.getElementById("topHeadlines").addEventListener("click", checkHandler);
 function checkHandler(e){
     if(e.target.checked === true){
-        document.getElementById("countryDiv").style.display = "block";
-        document.getElementById("categoryDiv").style.display = "block";
-        document.getElementById("sortDiv").style.display = "none";
-        document.getElementById("fromTo").style.display = "none";
+        document.getElementById("countryDiv").classList.add("block");
+        document.getElementById("categoryDiv").classList.add("block");
+        document.getElementById("sortDiv").classList.add("none");
+        document.getElementById("fromTo").classList.add("none");
+
+        document.getElementById("countryDiv").classList.remove("none");
+        document.getElementById("categoryDiv").classList.remove("none");
+        document.getElementById("sortDiv").classList.remove("block");
+        document.getElementById("fromTo").classList.remove("block");
     }else{
-        document.getElementById("countryDiv").style.display = "none";
-        document.getElementById("categoryDiv").style.display = "none";
-        document.getElementById("sortDiv").style.display = "block";
-        document.getElementById("fromTo").style.display = "block";
+        document.getElementById("countryDiv").classList.add("none");
+        document.getElementById("categoryDiv").classList.add("none");
+        document.getElementById("sortDiv").classList.add("block");
+        document.getElementById("fromTo").classList.add("block");
+
+        document.getElementById("countryDiv").classList.remove("block");
+        document.getElementById("categoryDiv").classList.remove("block");
+        document.getElementById("sortDiv").classList.remove("none");
+        document.getElementById("fromTo").classList.remove("none");
         
     }
 }
 
 document.getElementById("close").addEventListener("click", ()=>{
-    document.getElementById("myFullScreen").style.display = "none";
+    document.getElementById("myFullScreen").classList.add("none");
+    document.getElementById("myFullScreen").classList.remove("block");
 })
 

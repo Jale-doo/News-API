@@ -22,7 +22,7 @@ body {
   top: 0;
   left:0;
   width: 90%; /* Full width */
-  max-height: 85%; /* Full height */
+  max-height: 100%; /* Full height */
   overflow: hidden; /* Enable scroll if needed */
   background-color: white;
   margin: 5%;
@@ -203,28 +203,30 @@ body {
   /* Nav bar responsive */
   @media screen and (max-width: 900px) {
     .navbar{
-        flex-direction: column;
-        position: relative;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
     }
-    .navbar a:not(:first-child) ,.navbar > .dropdown:not(:first-child) {display: none;}
+    .navbar a:not(.selected) ,.navbar > .dropdown:not(:first-child) {display: none;}
     .navbar a.icon{
-        display: block;
-        position: absolute;
-        right: 0;
-    }
+      display: block;
+      position: absolute;
+      right: 0;
+      z-index: 2;
+    } 
     .tab{
-        flex: 1;
+      flex: 1;
     }
     .navbar.responsive {position: relative;}
     .navbar.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
     .navbar.responsive a ,.navbar.responsive > .dropdown {
-        float: none;
-        display: block;
-        text-align: left;
+      float: none;
+      display: block;
+      text-align: left;
     }
   }
   
@@ -300,6 +302,7 @@ body {
   .header{
     position: relative;
     margin-bottom: 1rem;
+    width: 100%;
   }
 
 .header > h1{
@@ -468,4 +471,17 @@ body {
   background-color: rgb(5, 39, 134);
   border-radius: 25px;
   color: white;
+}
+
+.visible{
+  visibility: visible;
+}
+.hidden{
+  visibility: hidden;
+}
+.block{
+  display: block;
+}
+.flex{
+  display: flex;
 }

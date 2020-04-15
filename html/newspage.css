@@ -8,59 +8,63 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   background: rgb(89,101,255);
-    background: linear-gradient(180deg, rgba(89,101,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,75,75,1) 100%);
+  background: linear-gradient(180deg, rgba(89,101,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,75,75,1) 100%);
+}
+
+.home{
+  width: 100%;
+  position: relative;
 }
 
 img{
   cursor: pointer;
 }
 
- /*Fullscreen*/
- .fullscreen {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  top: 0;
-  left:0;
-  width: 90%; /* Full width */
-  max-height: 85%; /* Full height */
-  overflow: hidden; /* Enable scroll if needed */
-  background-color: white;
-  margin: 5%;
-}
-.fullscreen > .textInFullScreen{
-  position: relative;
-}
-.fullscreen > .textInFullScreen > img{
-  width: 100%;
-  height: 550px;
-  object-fit: cover;
-}
-.fullscreen > .textInFullScreen > h1{
-  position: absolute;
-  top: 5%;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.356);
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  color: white;
-  z-index: 1;
-}
-.fullscreen > .content{
-  position: relative;
-}
-.fullscreen > .content button{
-  border-radius: 25px;
-  background-color: red;
-  border: 1px solid black;
-  
-}
-.fullscreen a{
-  text-decoration: none;
-  color: white;
-}
-
+  /*Fullscreen*/
+  .fullscreen {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left:0;
+    width: 90%; 
+    max-height: 100%; 
+    overflow: hidden; 
+    background-color: white;
+    margin: 5%;
+  }
+  .fullscreen > .textInFullScreen{
+    position: relative;
+  }
+  .fullscreen > .textInFullScreen > img{
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+  }
+  .fullscreen > .textInFullScreen > h1{
+    position: absolute;
+    top: 5%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.356);
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 1;
+  }
+  .fullscreen > .content{
+    position: relative;
+  }
+  .fullscreen > .content button{
+    border-radius: 25px;
+    background-color: red;
+    border: 1px solid black;
+    
+  }
+  .fullscreen a{
+    text-decoration: none;
+    color: white;
+  }
 
 
 /* X button */
@@ -193,6 +197,7 @@ img{
   .navbar{
       flex-direction: column;
       position: relative;
+      width: 100%;
   }
   .navbar a:not(.selected) ,.navbar > .dropdown:not(:first-child) {display: none;}
   .navbar a.icon{
@@ -339,7 +344,7 @@ img{
   display: inline-block;
 }
 
-.mySlides {display: none;}
+/* .mySlides {display: none;} */
 img {vertical-align: middle;}
 
 /* Slideshow container */
@@ -393,11 +398,23 @@ to {opacity: 1}
 .text {font-size: 11px}
 }
 
-.mySlides{
-  width: 100%;
+.mostPopular{
+  color: rgb(255, 255, 255);
+  font-size: 36px;
+  font-weight: bold;
+  width: 70%;
+  text-align: left;
+  margin-left: 5%;
+  margin-bottom: 10PX;
+  display: inline-block;
 }
 
 
+
+.mySlides{
+  width: 100%;
+  margin-left: 2.5%;
+}
 
 .slider > div{
 flex: 1;
@@ -406,7 +423,7 @@ flex: 1;
 .slideshow-container{
   margin-top: 20px;
   position: relative;
-
+  width: 100%;
   
 }
 
@@ -427,7 +444,7 @@ flex: 1;
   color: #999;
   position: absolute;
   top: 30%;
-  right: -1.5rem;
+  right: 0.5rem;
   font-size: 1.5rem;
   }
   
@@ -440,7 +457,7 @@ flex: 1;
     width: 30%;
     display: flex;
     padding-bottom: 50px;
-    margin-left: 3%;
+    margin-left: 1%;
 }
 .slider > content > a{
     height: 20px;
@@ -493,15 +510,17 @@ flex: 1;
 
 .line{
 position: relative;
+display: grid;
+grid-template-columns: 3fr 1fr;
 }
 
 .right{
 position: absolute;
 top: 0;
 right: 2%;
-
 width: 20%;
 }
+
 .right p{
   color: white;
 }
@@ -531,6 +550,7 @@ width: 20%;
   font-size: 12px;
   width: 48%;
   height: 125px;
+  overflow: hidden;
 }
 
 .facebook{
@@ -578,37 +598,12 @@ margin-bottom: 70px;
   font-size: 10px;
 }
 
-
-
-
-@media screen and (max-width: 900px){
-  .right{
-      display: none;
-  }
-  .slider{
-      display: block;
-      width: 95%;
-      margin: auto;
-  }
-  .slider > .prev, .slider > .next{
-      display: none;
-  }
-  .slider > .content{
-      margin: 10px 0;
-
-  }
-  .slider > .content > .backgroundImg{
-      width: 60%;
-  }
-  .slider > .content > h1{
-      position: absolute;
-      top: 0;
-      right: 50px;
-      width: 20%;
-      background-color: white;
-  }
+.hidden{
+  visibility: hidden;
+  height: 0px;
+  color: white;
+  padding-bottom: 10px;
 }
-
 
 #loadMore{
   position: relative;
@@ -683,4 +678,131 @@ margin-bottom: 70px;
 
 .imgcont:hover .overlay {
   height: 50%;
+}
+
+
+.right > .hidden{
+  visibility: hidden;
+}
+
+
+@media screen and (max-width: 900px){
+
+  .home {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+
+  .preHome > h1{
+    margin-left: 50%;
+    transform: translate(-50%);
+  }
+
+  .preHome > h2{
+    display: none;
+  }
+
+  .right{
+    position: relative;
+    margin-left: 50%;
+    transform: translate(-50%);
+    top: 0;
+    width: 80%;
+  }
+
+  .right > .hidden{
+    visibility: visible;
+    height:20px;
+  }
+  .right > .facebook{
+    display: none;
+  }
+  .line{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: repeat(1, 1fr);
+    height: 100%;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .mostPopular{
+    margin-left: 8%;
+  }
+
+  .slideshow-container{
+    position: relative;
+    margin-left: 50%;
+    transform: translate(-50%);
+    padding: 0;
+    width: 90%;
+    height: 50%;
+  }
+  .slideshow-container > .mySlides{
+    position: relative;
+    left: -3%;
+  }
+  .topRated{
+    width: 84%;
+  }
+  .topRated > .row{
+    display: block;
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 5px;
+    margin-left: 3%;
+    
+  }
+
+  .topRated > .row > .content{
+    display: block;
+    height: 150px;
+  }
+  
+  .text > p{
+    font-size: 12px;
+  }
+  #loadMore{
+    margin-top: 0px;
+    left: 41%;
+  }
+
+  .loadMore{
+    padding:0;
+    margin-top: 0px;
+  }
+
+  .slider{
+      display: block;
+      width: 95%;
+      margin: auto;
+  }
+  .prev, .next{
+      display: none;
+  }
+  .slider > .content{
+      margin: 0px 0;
+      width: 100%;
+  }
+  .slider > .content > .backgroundImg{
+      width: 100%;
+  }
+  .slider > .content > h1{
+      position: absolute;
+      font-size: 13px;
+      width: 100%;
+  }
+}
+
+.visible{
+  visibility: visible;
+}
+.hidden{
+  visibility: hidden;
+}
+.block{
+  display: block;
+}
+.flex{
+  display: flex;
 }

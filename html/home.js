@@ -46,7 +46,7 @@ fetch(urlSlider)
         mySlides.classList.add("mySlides" ,"fade");
 
         for(let i = 0; i< articles.length; i++){
-            if(i >= 9){
+            if(i >= 12){
                 break;
             }
 
@@ -75,7 +75,7 @@ fetch(urlSlider)
             content.addEventListener("click", () => {
                     
                 var fullScreen = document.getElementById("myFullScreen");
-                fullScreen.style.display = "block";
+                fullScreen.classList.add("block");
                 fullScreen.children[1].innerHTML = `
                     <img src="${articles[i]["urlToImage"]}" alt="something">
                     <h1>${articles[i]["title"]}</h1> `
@@ -106,12 +106,14 @@ fetch(urlSlider)
             var slides = document.getElementsByClassName("mySlides");
 
             for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
+                slides[i].classList.add("none");
+                slides[i].classList.remove("flex");
             }
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
 
-            slides[slideIndex-1].style.display = "flex";  
+            slides[slideIndex-1].classList.add("flex");  
+            slides[slideIndex-1].classList.remove("none");  
 
             animate = setTimeout(showSlides, 3500); // Change image every 3.5 seconds
         }
@@ -133,10 +135,13 @@ fetch(urlSlider)
             showSlides();
         });
 
-  next.addEventListener("click", function(e){
-      clearTimeout(animate);
-      showSlides();
-  });
+        next.addEventListener("click", function(e){
+            clearTimeout(animate);
+            showSlides();
+        });
+    })
+    .catch((error) =>{
+        console.error(error)
     })
 
 var urlLatestNews = "https://newsapi.org/v2/everything?apiKey=c5513454f4d94b9fbca2b31ce9b4f1a6&sortBy=publishedAt&language=en";
@@ -170,7 +175,7 @@ fetch(urlLatestNews)
             content.addEventListener("click", () => {
                     
                 var fullScreen = document.getElementById("myFullScreen");
-                fullScreen.style.display = "block";
+                fullScreen.classList.add("block");
                 fullScreen.children[1].innerHTML = `
                     <img src="${articles[i]["urlToImage"]}" alt="something">
                     <h1>${articles[i]["title"]}</h1> `
@@ -234,7 +239,7 @@ fetch(urlTopRated)
             img.addEventListener("click", () => {
                 
                 var fullScreen = document.getElementById("myFullScreen");
-                fullScreen.style.display = "block";
+                fullScreen.classList.add("block");
                 fullScreen.children[1].innerHTML = `
                     <img src="${articles[i]["urlToImage"]}" alt="something">
                     <h1>${articles[i]["title"]}</h1> `
@@ -325,7 +330,7 @@ function loadHandler(e){
                 img.addEventListener("click", () => {
                     
                     var fullScreen = document.getElementById("myFullScreen");
-                    fullScreen.style.display = "block";
+                    fullScreen.classList.add("block");
                     fullScreen.children[1].innerHTML = `
                         <img src="${articles[i]["urlToImage"]}" alt="something">
                         <h1>${articles[i]["title"]}</h1> `
@@ -356,5 +361,6 @@ function loadHandler(e){
 }
 
 document.getElementById("close").addEventListener("click", ()=>{
-    document.getElementById("myFullScreen").style.display = "none";
+    document.getElementById("myFullScreen").classList.add("none");
+    document.getElementById("myFullScreen").classList.remove("block");
 })

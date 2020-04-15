@@ -1,166 +1,231 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    overflow-x: hidden;
-    background-color: white;
-  }
-  /*rgb(27, 27, 88)*/
-  .none{
-    display: none;
-  }
-  
-  .slideshow-container{
-    box-sizing: border-box;
-  }
-  
-  .selected{
-    background-color: rgb(52, 52, 197);
-  }
-  
-  .header{
-    position: relative;
-  }
-  
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  #daily{
-    width: 250px;
-    float: right;
-    height: 170px;
-    position: absolute;
-    bottom: 0;
-    right: 3%;
-  }
-  
-  .navbar {
-    display: flex;
-    background-color: rgb(0, 0, 0);
-    width: 100%;
-    border-bottom-style:double;
-    border-bottom-color: rgb(52, 52, 197);
-    border-bottom-width: 3px;
-  }
-  
-  .tab{
-    flex: 1;
-    display: inline-block;
-  }
-  
-  .navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .dropdown {
-    float: left;
-    overflow: hidden;
-  }
-  
-  .dropdown .dropbtn {
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-    font-weight: bold;
-    width: 100%;
-  }
-  
-  .navbar a:hover, .dropdown:hover {
-    background-color: rgb(52, 52, 197);
-  }
-  
-  .border{
-    border-style:solid;
-    border-color: rgb(52, 52, 197);
-    border-width: 3px;
-    margin: 3px;
-  }
-  
-  .modalimage{
-    width: 100%;
-    height: 100%;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  .dropdown .dropbtn > a{
-    display: block;
-    width: 100%;
-  }
-  
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #ddd;
-    
-  }
-  
-  .dropdown:hover .dropdown-content {
-    
-    display: block;
-  }
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  background-color: white;
+}
+/*rgb(27, 27, 88)*/
+.none{
+display: none;
+}
+/*Fullscreen*/
+.fullscreen {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+top: 0;
+left:0;
+width: 90%; /* Full width */
+max-height: 100%; /* Full height */
+overflow: hidden; /* Enable scroll if needed */
+background-color: white;
+margin: 5%;
+}
+.fullscreen > .textInFullScreen{
+position: relative;
+}
+.fullscreen > .textInFullScreen > img{
+width: 100%;
+height: 550px;
+object-fit: cover;
+}
+.fullscreen > .textInFullScreen > h1{
+position: absolute;
+top: 5%;
+left: 0;
+background-color: rgba(0, 0, 0, 0.356);
+display: inline-block;
+width: 100%;
+text-align: center;
+color: white;
+z-index: 1;
+}
+.fullscreen > .content{
+position: relative;
+}
+.fullscreen > .content button{
+border-radius: 25px;
+background-color: red;
+border: 1px solid black;
 
-.navbar a.icon{
+}
+.fullscreen a{
+text-decoration: none;
+color: white;
+}
+
+
+
+/* X button */
+.close {
+position: fixed;
+cursor: pointer;
+top: 10%;
+right: 7%;
+color: #f1f1f1;
+font-size: 40px;
+font-weight: bold;
+transition: 0.3s;
+z-index: 2;
+}
+
+
+@media screen and (max-width:700px){
+.close{
+  top: 5%;
+}
+}
+
+.slideshow-container{
+  box-sizing: border-box;
+}
+
+.selected{
+  background-color: rgb(52, 52, 197);
+}
+
+.header{
+  position: relative;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#daily{
+  width: 250px;
+  float: right;
+  height: 170px;
+  position: absolute;
+  bottom: 0;
+  right: 3%;
+}
+
+.navbar {
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  border-bottom-style:double;
+  border-bottom-color: rgb(52, 52, 197);
+  border-bottom-width: 3px;
+  margin-bottom: 1rem;
+}
+
+.tab{
+  flex: 1;
+  display: inline-block;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-weight: bold;
+
+}
+
+
+.navbar a:hover, .dropdown:hover {
+  background-color: rgb(52, 52, 197);
+}
+
+.border{
+  border-style:solid;
+  border-color: white;
+  border-width: 3px;
+  
+}
+
+.modalimage{
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.navbar .icon {
   display: none;
 }
-  /* Nav bar responsive */
-@media screen and (max-width: 900px) {
+
+ /* Nav bar responsive */
+ @media screen and (max-width: 900px) {
   .navbar{
-      flex-direction: column;
-      position: relative;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
   }
   .navbar a:not(.selected) ,.navbar > .dropdown:not(:first-child) {display: none;}
   .navbar a.icon{
-      display: block;
-      position: absolute;
-      right: 0;
-      z-index: 2;
+    display: block;
+    position: absolute;
+    right: 0;
+    z-index: 2;
   } 
   .tab{
-      flex: 1;
+    flex: 1;
   }
   .navbar.responsive {position: relative;}
   .navbar.responsive a.icon {
-      position: absolute;
-      right: 0;
-      top: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
   .navbar.responsive a ,.navbar.responsive > .dropdown {
-      float: none;
-      display: block;
-      text-align: left;
+    float: none;
+    display: block;
+    text-align: left;
   }
 }
 

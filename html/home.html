@@ -30,7 +30,7 @@
             
           <a href="health.html" class="tab e" id="healthtab">Health</a>
           <a href="lifestyle.html" class="tab e" id="lifestyletab">Lifestyle</a>
-          <a href="horoscope.html" class="tab e" id="horoscopetab">Technology</a>
+          <a href="technology.html" class="tab e" id="horoscopetab">Technology</a>
           <a href="aboutus.html" class = "tab e" id="aboutus">About Us</a>
           <a href="list.html" class="e">Advanced search</a>
           <a href="javascript:void(0);" class="icon" onclick="navResponsive()">
@@ -47,12 +47,13 @@
       
             <img id="daily" src="news2.gif" alt="dailygif">
         </div> -->
-    
     </header>
+
     <div class="preHome">
         <h1>Headlines</h1>
         <h2>Latest news</h2>
     </div>
+
     <div class = "home">
         <!--ovdje ce da ide slider-->
         <div class="line">
@@ -69,38 +70,58 @@
 
 
             <div class="right">
+
+                <div class = "hidden">
+                    <h2>Latest news</h2>
+                </div>
+
                 <div class="best" id="best">
                     
                 </div>
 
-                <div class="facebook">
+                <!--<div class="facebook">
                     <div class="content">
                         <p>Info facebook</p>
                     </div>
+                </div>-->
+                <div class="facebook">
+
+                    <div id="fb-root"></div>
+                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+                
+                    <div class="fb-page content" data-href="https://www.facebook.com/bbcnews/" data-tabs="timeline" data-width="200px" data-height="200px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                    </div>
+                
+                    <blockquote cite="https://www.facebook.com/bbcnews/" class="fb-xfbml-parse-ignore">
+                        <a href="https://www.facebook.com/bbcnews/">Facebook</a>
+                    </blockquote>
                 </div>
             </div>
-        </div>
-
-    <div class="topRated" id="topRated">
-        
-                  
-    </div>
-
-    <div class="loadMore">
-        <a href="#" id="loadMore">Load More</a>
-    </div>
-    
-    <div id="myFullScreen" class="fullscreen">
-        <span class="close" id="close">&times;</span>
-        <div class="textInFullScreen">
-            <img src="#" alt="something">
-            <h1>Naslov</h1>
-        </div>
-        <div class="content">
-            <p>context <button><a href="#">Read More</a></button></p>
             
         </div>
-    </div>  
+
+        <div class="mostPopular">Most popular</div>
+        
+        <div class="topRated" id="topRated">
+            
+                  
+        </div>
+
+        <div class="loadMore">
+        <a href="#" id="loadMore">Load More</a>
+        </div>
+    
+        <div id="myFullScreen" class="fullscreen">
+            <span class="close" id="close">&times;</span>
+            <div class="textInFullScreen">
+                <img src="#" alt="something">
+                <h1>Naslov</h1>
+            </div>
+            <div class="content">
+                <p>context <button><a href="#">Read More</a></button></p>
+                
+            </div>
+        </div>  
 
 <footer class="footer">
     <div class = "footer1">
@@ -126,7 +147,7 @@
 
         <a href="health.html">Health</a>
         <a href="lifestyle.html">Lifestyle</a>
-        <a href="horoscope.html">Horoscope</a>
+        <a href="technology.html">Technology</a>
         <a href="aboutus.html">About Us</a>
     </div>
 

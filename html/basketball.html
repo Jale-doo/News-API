@@ -29,7 +29,7 @@
         
       <a href="health.html" class="tab e" id="healthtab">Health</a>
       <a href="lifestyle.html" class="tab e" id="lifestyletab">Lifestyle</a>
-      <a href="horoscope.html" class="tab e" id="horoscopetab">Technology</a>
+      <a href="technology.html" class="tab e" id="horoscopetab">Technology</a>
       <a href="aboutus.html" class = "tab e" id="aboutus">About Us</a>
       <a href="list.html" class="e">Advanced search</a>
       <a href="javascript:void(0);" class="icon" onclick="navResponsive()">
@@ -68,17 +68,31 @@
 
 
         <div class="right">
+
+            <div class = "hidden">
+                <h2>Latest news</h2>
+            </div>
+
             <div class="best" id="best">
                 
             </div>
 
             <div class="facebook">
-                <div class="content">
-                    <p>Info facebook</p>
+                <div id="fb-root"></div>
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+            
+                <div class="fb-page content" data-href="https://www.facebook.com/bbcnews/" data-tabs="timeline" data-width="200px" data-height="200px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                 </div>
+            
+                <blockquote cite="https://www.facebook.com/bbcnews/" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/bbcnews/">Facebook</a>
+                </blockquote>
             </div>
+            
         </div>
     </div>
+
+    <div class="mostPopular">Most popular</div>
 
 <div class="topRated" id="topRated">
     
@@ -125,7 +139,7 @@
 
     <a href="health.html">Health</a>
     <a href="lifestyle.html">Lifestyle</a>
-    <a href="horoscope.html">Horoscope</a>
+    <a href="technology.html">Technology</a>
     <a href="aboutus.html">About Us</a>
 </div>
 
