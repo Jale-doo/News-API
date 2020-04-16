@@ -106,8 +106,7 @@ function searchHandler(e){
     }
     
     
-    
-    console.log(url);
+
 
     document.getElementById("data").innerHTML = "";
     fetch(url)
@@ -170,7 +169,8 @@ function searchHandler(e){
                 con.addEventListener("click", () => {
                     
                     var fullScreen = document.getElementById("myFullScreen");
-                    fullScreen.classList.add("block");
+                    fullScreen.classList.remove("none");
+                    fullScreen.classList.add("block","animated","lightSpeedIn");
                     fullScreen.children[1].innerHTML = `
                         <img src="${articles[i]["urlToImage"]}" alt="something">
                         <h1>${articles[i]["title"]}</h1> `

@@ -65,7 +65,9 @@ fetch(urlSlider)
             readMore.innerHTML = "Read more"
 
             var img = document.createElement("img");
-            img.setAttribute("src",`${articles[i]["urlToImage"]}`);
+            if(articles[i]["urlToImage"] != null){
+                img.setAttribute("src",`${articles[i]["urlToImage"]}`);
+            }
             img.setAttribute("alt" , "news");
             img.classList.add("backgroundImg");
 
@@ -75,7 +77,7 @@ fetch(urlSlider)
             content.addEventListener("click", () => {
                     
                 var fullScreen = document.getElementById("myFullScreen");
-                fullScreen.classList.add("block");
+                fullScreen.classList.add("block","animated","lightSpeedIn");
                 fullScreen.children[1].innerHTML = `
                     <img src="${articles[i]["urlToImage"]}" alt="something">
                     <h1>${articles[i]["title"]}</h1> `
@@ -141,7 +143,7 @@ fetch(urlSlider)
         });
     })
     .catch((error) =>{
-        console.error(error)
+        console.error("Error:" ,error)
     })
 
 var urlLatestNews = "https://newsapi.org/v2/everything?apiKey=c5513454f4d94b9fbca2b31ce9b4f1a6&sortBy=publishedAt&language=en";
@@ -175,7 +177,7 @@ fetch(urlLatestNews)
             content.addEventListener("click", () => {
                     
                 var fullScreen = document.getElementById("myFullScreen");
-                fullScreen.classList.add("block");
+                fullScreen.classList.add("block","animated","lightSpeedIn");
                 fullScreen.children[1].innerHTML = `
                     <img src="${articles[i]["urlToImage"]}" alt="something">
                     <h1>${articles[i]["title"]}</h1> `
@@ -188,7 +190,10 @@ fetch(urlLatestNews)
             document.getElementById("best").appendChild(content);
 
         }
+    }).catch((error) =>{
+        console.error("Error:" ,error)
     })
+
 
     
 var urlTopRated = "https://newsapi.org/v2/everything?apiKey=c5513454f4d94b9fbca2b31ce9b4f1a6&sortBy=popularity&pageSize=6&page=1"
@@ -239,7 +244,7 @@ fetch(urlTopRated)
             img.addEventListener("click", () => {
                 
                 var fullScreen = document.getElementById("myFullScreen");
-                fullScreen.classList.add("block");
+                fullScreen.classList.add("block","animated","lightSpeedIn");
                 fullScreen.children[1].innerHTML = `
                     <img src="${articles[i]["urlToImage"]}" alt="something">
                     <h1>${articles[i]["title"]}</h1> `
@@ -257,7 +262,10 @@ fetch(urlTopRated)
                 row.classList.add("row");
             }
         }
+    }).catch((error) =>{
+        console.error("Error:" ,error)
     })
+
 
 var br = 2;
 var numOfPages = 2;
@@ -271,7 +279,6 @@ function loadHandler(e){
     if(e.target.id == "loadMore"){
         if (br <= numOfPages) {
             br++;
-            console.log("OK")
         }
     }
 
@@ -330,7 +337,7 @@ function loadHandler(e){
                 img.addEventListener("click", () => {
                     
                     var fullScreen = document.getElementById("myFullScreen");
-                    fullScreen.classList.add("block");
+                    fullScreen.classList.add("block","animated","lightSpeedIn");
                     fullScreen.children[1].innerHTML = `
                         <img src="${articles[i]["urlToImage"]}" alt="something">
                         <h1>${articles[i]["title"]}</h1> `
@@ -357,7 +364,10 @@ function loadHandler(e){
                     row.classList.add("row");
                 }
             }
+        }).catch((error) =>{
+            console.error("Error:" ,error)
         })
+    
 }
 
 document.getElementById("close").addEventListener("click", ()=>{
